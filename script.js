@@ -1,3 +1,4 @@
+"use strict";
 const menu = document.querySelector(".menu");
 const closeBtn = document.querySelector(".close-btn");
 const sideBar = document.querySelector(".side-bar");
@@ -21,3 +22,53 @@ document.addEventListener("keydown", function (e) {
   // console.log(e);
   if (e.key === "Escape") closeBar();
 });
+
+const slider = function () {
+  const sliderContainer = document.querySelector(".slider");
+  const slides = document.querySelectorAll(".product-preview");
+  const btnLeft = document.querySelector(".slider__btn--left");
+  const btnRight = document.querySelector(".slider__btn--right");
+  let curSlide = 0;
+  let maxSlide = slides.length;
+
+  sliderContainer.style.overflow = "hidden";
+  // curSlide: -100% 0% 100% 200%
+  const gotoSlide = function (slide) {
+    slides.forEach(
+      (s, i) => (s.style.transform = `translate(${100 * (i - slide)}%)`)
+    );
+  };
+
+  const nextSlide = function () {
+    if (curSlide === maxSlide - 1) {
+      curSlide = 0;
+    } else {
+      curSlide++;
+    }
+
+    gotoSlide(curSlide);
+  };
+  btnRight.addEventListener("click", nextSlide);
+
+  const prevSlide = function () {
+    if (curSlide === 0) {
+      curSlide = maxSlide - 1;
+    } else {
+      curSlide--;
+    }
+    gotoSlide(curSlide);
+  };
+
+  const init = function () {
+    gotoSlide(0);
+  };
+  init();
+
+  btnLeft.addEventListener("click", prevSlide);
+
+  document.addEventListener("keydown", function (e) {
+    e.key === "ArrowLeft" && prevSlide();
+    e.key === "ArrowRight" && nextSlide();
+  });
+};
+slider();

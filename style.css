@@ -79,6 +79,7 @@ body {
 .header-container {
   position: fixed;
   width: 100%;
+  z-index: 4;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -184,8 +185,19 @@ body {
 
 /* section-1 */
 
+.slider {
+  position: relative;
+  height: 40rem;
+  max-width: 50rem;
+}
+.product-preview {
+  position: absolute;
+  top: 5rem;
+  height: 45rem;
+  width: 40.4rem;
+  padding-bottom: 5rem;
+}
 .product-1 {
-  /* display: block; */
   height: 100%;
   width: 100%;
   object-fit: cover;
@@ -212,12 +224,12 @@ body {
 }
 
 .slider__btn--left {
-  left: 6%;
+  left: 7%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
-  right: 6%;
+  right: 7%;
   transform: translate(50%, -50%);
 }
 

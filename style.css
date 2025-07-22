@@ -1,0 +1,393 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400,700&display=swap");
+
+:root {
+  /* primary-colour */
+  --primary-Orange: hsl(26, 100%, 55%);
+  --primary-Pale-orange: hsl(25, 100%, 94%);
+
+  /* Neutral colour */
+
+  --Very-dark-blue: hsl(220, 13%, 13%);
+  --Dark-grayish-blue: hsl(219, 9%, 45%);
+  --Grayish-blue: hsl(220, 14%, 75%);
+  --Light-grayish-blue: hsl(223, 64%, 98%);
+  --White: hsl(0, 0%, 100%);
+  --Black: (with 75% opacity for lightbox background) hsl(0, 0%, 0%);
+
+  --line-height: 2rem;
+  --word-spacing: 0.2rem;
+  --box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+h1 {
+  font-size: 2.3rem;
+}
+
+h2 {
+  font-size: 1.2rem;
+}
+
+p {
+  font-size: 16px;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.section-center {
+  width: 90vw;
+  margin: 0 auto;
+  max-width: 1170px;
+}
+
+body {
+  font-family: "Kumbh Sans", sans-serif;
+  font-weight: 400;
+  height: 100vh;
+}
+
+/* img {
+  display: block;
+  object-fit: fill;
+} */
+
+.image-avatar {
+  height: 2rem;
+  padding-left: 2rem;
+}
+
+.cart-image {
+  height: 1.5rem;
+}
+
+.menu {
+  padding-right: 2rem;
+  cursor: pointer;
+}
+
+.header-container {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2rem;
+  background-color: var(--White);
+}
+
+.side-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 85%;
+  height: 100%;
+  background: var(--White);
+  box-shadow: var(--box-shadow);
+  z-index: 5;
+  display: grid;
+  /* place-items: center; */
+  transform: translateX(100%);
+}
+
+.close-btn {
+  position: absolute;
+  top: 0;
+  left: 7rem;
+  background: transparent;
+  border: none;
+  color: var(--primary-blue-cl);
+  font-size: 3rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.close-btn:hover {
+  color: var(--primary-Orange);
+}
+
+.bar-links {
+  padding-top: 5rem;
+  padding-left: 8rem;
+}
+
+.bar {
+  display: block;
+  margin-bottom: 1rem;
+  text-transform: capitalize;
+  font-size: 1.5rem;
+  font-weight: bold;
+  line-height: var(--line-height);
+  letter-spacing: var(--letter-spacing);
+  color: var(--Dark-grayish-blue);
+  transition: var(--transition);
+}
+.bar:hover {
+  color: var(--secondary-blue-cl);
+  border-left: var(--secondary-blue-cl) solid 0.5rem;
+  border-right: var(--secondary-blue-cl) solid 0.5rem;
+}
+
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 4;
+  transition: all 0.2s;
+}
+
+.nav-links {
+  display: none;
+}
+/* .nav-links a{
+  color: var(--Grayish-blue)
+} */
+
+@media screen and (min-width: 768px) {
+  .menu {
+    display: none;
+  }
+
+  .nav-links {
+    display: flex;
+    justify-content: left;
+  }
+  li a {
+    padding: 0.5rem;
+  }
+
+  .menu-left {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+}
+
+/* section-1 */
+
+.product-1 {
+  /* display: block; */
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.product-info {
+  padding: 2rem;
+}
+
+.slider__btn {
+  position: absolute;
+  top: 50%;
+  z-index: 10;
+
+  border: none;
+  background: rgba(255, 255, 255, 0.7);
+  font-family: inherit;
+  color: var(--White);
+  border-radius: 50%;
+  height: 5.5rem;
+  width: 5.5rem;
+  font-size: 2.25rem;
+  cursor: pointer;
+}
+
+.slider__btn--left {
+  left: 6%;
+  transform: translate(-50%, -50%);
+}
+
+.slider__btn--right {
+  right: 6%;
+  transform: translate(50%, -50%);
+}
+
+.title {
+  text-transform: uppercase;
+  font-weight: lighter;
+  font-family: inherit;
+  color: var(--Dark-grayish-blue);
+  padding-bottom: 1.5rem;
+}
+
+.sub-title {
+  text-transform: capitalize;
+  padding-bottom: 1.5rem;
+}
+
+.text {
+  line-height: var(--line-height);
+  width: 100%;
+  color: var(--Grayish-blue);
+  word-spacing: var(--word-spacing);
+}
+
+.sale-amount {
+  display: flex;
+  justify-content: space-between;
+  padding: 2rem;
+}
+
+.amount-right {
+  display: flex;
+}
+
+.amount-percentage {
+  padding: 0.25rem;
+  margin-left: 1rem;
+  border-radius: 15%;
+  background: var(--Very-dark-blue);
+  color: var(--White);
+  font-size: 0.75rem;
+}
+
+.right-thick {
+  font-weight: bolder;
+  font-size: 1.3rem;
+}
+
+.left-thick {
+  color: var(--Dark-grayish-blue);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.add-minus {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 1rem;
+  background: var(--Light-grayish-blue);
+  border-radius: 0.75rem;
+  margin: 1rem 2rem;
+}
+
+.add {
+  height: 0.5rem;
+}
+
+.minus {
+  height: 0.2rem;
+  width: 1rem;
+}
+
+.btn {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+.add-btn {
+  display: flex;
+  justify-content: center;
+}
+
+.text-btn {
+  color: var(--Very-dark-blue);
+}
+
+.add-btn {
+  background: var(--primary-Orange);
+  border-radius: 0.75rem;
+  margin: 1rem 2rem;
+}
+.btn-bottom {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  outline: none;
+  border: none;
+  background: none;
+  color: var(--Very-dark-blue);
+}
+
+.btn-cart {
+  padding-right: 0.5rem;
+}
+
+@media screen and (min-width: 992px) {
+  .header-container {
+    padding: 2rem;
+    position: static;
+    top: 0;
+    width: 100%;
+  }
+
+  .product-1 {
+    width: 30rerem;
+    height: 30rem;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+  .main-page-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: center;
+    width: 90vw;
+    margin: 5rem auto;
+    max-width: 1170px;
+  }
+
+  .title {
+    font-size: 0.75rem;
+  }
+  .sub-title {
+    font-size: 1.5rem;
+  }
+
+  .text {
+    width: 70%;
+  }
+
+  .sale-amount {
+    display: block;
+  }
+
+  .body-cart {
+    display: inline-flex;
+  }
+
+  .add-minus {
+    padding-right: 2rem;
+  }
+
+  .minus {
+    margin-right: 2rem;
+  }
+
+  .add {
+    padding-left: 2rem;
+  }
+
+  .add-btn {
+    padding: 0 3rem;
+  }
+
+  /* .product-info {
+    width: 90vw;
+    margin: 0 auto;
+    max-width: 1170px;
+  } */
+}

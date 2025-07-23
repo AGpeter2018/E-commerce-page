@@ -23,6 +23,7 @@ document.addEventListener("keydown", function (e) {
   if (e.key === "Escape") closeBar();
 });
 
+// slider show at mobile view
 const slider = function () {
   const sliderContainer = document.querySelector(".slider");
   const slides = document.querySelectorAll(".product-preview");
@@ -73,6 +74,7 @@ const slider = function () {
 };
 slider();
 
+// slider show at dekstop view
 const mainImage = document.querySelector(".main-image");
 const thumbnails = document.querySelectorAll(".thumbnail");
 
@@ -82,4 +84,26 @@ thumbnails.forEach((thumbnail) => {
     this.classList.add("active");
     mainImage.src = this.src;
   });
+});
+// quantity select with amount
+const minusBtn = document.querySelector(".minus");
+const pluBtn = document.querySelector(".add");
+const quantity = document.querySelector(".quantity");
+const amountDisplay = document.querySelector(".right-thick");
+
+let quantityDecreaseIncrease = 0;
+const unitPerSale = 125;
+
+const updateSale = function () {
+  quantity.textContent = quantityDecreaseIncrease;
+  amountDisplay.textContent = unitPerSale * quantityDecreaseIncrease;
+};
+
+minusBtn.addEventListener("click", function () {
+  if (quantityDecreaseIncrease > 1) quantityDecreaseIncrease--;
+  updateSale();
+});
+pluBtn.addEventListener("click", function () {
+  quantityDecreaseIncrease++;
+  updateSale();
 });

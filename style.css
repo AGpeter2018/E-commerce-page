@@ -51,6 +51,10 @@ a {
   max-width: 1170px;
 }
 
+.product-button {
+  display: inline-block;
+}
+
 body {
   font-family: "Kumbh Sans", sans-serif;
   font-weight: 400;
@@ -187,7 +191,7 @@ body {
 
 .slider {
   position: relative;
-  height: 40rem;
+  height: 35rem;
   max-width: 50rem;
 }
 .product-preview {
@@ -337,7 +341,40 @@ body {
   padding-right: 0.5rem;
 }
 
+.preview-slide {
+  display: none;
+}
+
+@media screen and (min-width: 768px) {
+  .slider {
+    position: relative;
+    width: 100%;
+    /* height: 45rem; */
+  }
+  .product-preview {
+    position: absolute;
+    top: 0;
+    width: 50rem;
+  }
+
+  .product-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+}
+
 @media screen and (min-width: 992px) {
+  .main-page-container {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-evenly;
+    width: 90vw;
+    margin: 1rem auto;
+    max-width: 1170px;
+  }
   .header-container {
     padding: 2rem;
     position: static;
@@ -345,21 +382,28 @@ body {
     width: 100%;
   }
 
+  .slider {
+    display: none;
+    position: relative;
+    width: 35rem;
+    /* height: 45rem; */
+  }
+
+  .slider__btn {
+    display: none;
+  }
+
+  .product-preview {
+    position: absolute;
+    top: 0;
+    width: 50rem;
+  }
+
   .product-1 {
-    width: 30rerem;
-    height: 30rem;
+    width: 25rem;
+    height: 25rem;
     object-fit: cover;
     border-radius: 2rem;
-  }
-  .main-page-container {
-    display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 1rem;
-    align-items: center;
-    justify-content: center;
-    width: 90vw;
-    margin: 5rem auto;
-    max-width: 1170px;
   }
 
   .title {
@@ -397,9 +441,29 @@ body {
     padding: 0 3rem;
   }
 
-  /* .product-info {
-    width: 90vw;
-    margin: 0 auto;
-    max-width: 1170px;
-  } */
+  .preview-slide {
+    display: block;
+  }
+
+  .thumbnail-image {
+    display: flex;
+    gap: 0.2rem;
+    justify-content: center;
+    align-items: center;
+    padding-right: 4rem;
+    padding-top: 1rem;
+  }
+
+  .product-show {
+    margin-right: 1rem;
+  }
+
+  .thumbnail {
+    outline: none;
+    border-radius: 8%;
+  }
+
+  .active {
+    border: 2px solid var(--primary-Orange);
+  }
 }

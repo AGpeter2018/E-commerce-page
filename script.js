@@ -72,3 +72,14 @@ const slider = function () {
   });
 };
 slider();
+
+const mainImage = document.querySelector(".main-image");
+const thumbnails = document.querySelectorAll(".thumbnail");
+
+thumbnails.forEach((thumbnail) => {
+  thumbnail.addEventListener("click", function () {
+    thumbnails.forEach((el) => el.classList.remove("active"));
+    this.classList.add("active");
+    mainImage.src = this.src;
+  });
+});

@@ -163,9 +163,12 @@ body {
 .nav-links {
   display: none;
 }
-/* .nav-links a{
-  color: var(--Grayish-blue)
-} */
+.nav-links a {
+  color: var(--Dark-grayish-blue);
+}
+.nav-links a:hover {
+  color: var(--Very-dark-blue);
+}
 
 @media screen and (min-width: 768px) {
   .menu {
@@ -214,7 +217,7 @@ body {
 .slider__btn {
   position: absolute;
   top: 50%;
-  z-index: 10;
+  z-index: 2;
 
   border: none;
   background: rgba(255, 255, 255, 0.7);
@@ -260,7 +263,7 @@ body {
 .sale-amount {
   display: flex;
   justify-content: space-between;
-  padding: 2rem;
+  gap: 2rem;
 }
 
 .amount-right {
@@ -270,12 +273,16 @@ body {
 }
 
 .amount-percentage {
-  padding: 0.25rem;
+  padding: 0.45rem;
   margin-left: 1rem;
   border-radius: 15%;
   background: var(--Very-dark-blue);
   color: var(--White);
   font-size: 0.75rem;
+}
+
+.dolla {
+  padding-top: 0.2rem;
 }
 
 .right-thick {
@@ -301,11 +308,13 @@ body {
 
 .add {
   height: 0.5rem;
+  cursor: pointer;
 }
 
 .minus {
   height: 0.2rem;
   width: 1rem;
+  cursor: pointer;
 }
 
 .btn {
@@ -467,5 +476,6 @@ body {
 
   .active {
     border: 2px solid var(--primary-Orange);
+    opacity: 0.5;
   }
 }

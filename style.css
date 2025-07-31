@@ -17,6 +17,7 @@
   --line-height: 2rem;
   --word-spacing: 0.2rem;
   --box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.2);
+  --transition: all 0.3s;
 }
 
 * {
@@ -75,6 +76,12 @@ body {
   height: 1.5rem;
 }
 
+.cart-header {
+  outline: none;
+  border: none;
+  background: none;
+}
+
 .menu {
   padding-right: 2rem;
   cursor: pointer;
@@ -126,6 +133,128 @@ body {
   padding-left: 8rem;
 }
 
+.cart {
+  position: fixed;
+  top: 0;
+  right: -100%;
+  width: 360px;
+  height: 100%;
+  background: var(--White);
+  box-shadow: var(--box-shadow);
+  z-index: 100;
+  overflow: auto;
+  transition: 0.5s;
+  /* display: grid; */
+}
+.active {
+  right: 0;
+}
+.title-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--White);
+  box-shadow: var(--box-shadow);
+}
+.cart-title {
+  padding: 1.5rem;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--Dark-grayish-blue);
+}
+
+.close-cart {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding-right: 2rem;
+  transition: var(--transition);
+}
+
+.close-cart:hover {
+  color: var(--primary-Orange);
+}
+/* .cart-image {
+  height: 1.5rem;
+} */
+.cart-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+.cart-text {
+  padding-right: 2rem;
+}
+
+.text-cart {
+  font-size: 1rem;
+  color: var(--Very-dark-blue);
+  padding: 1rem;
+}
+
+.cart-price {
+  font-size: 1.2rem;
+  color: var(--Dark-grayish-blue);
+  font-weight: bold;
+}
+
+.cart-amount {
+  font-size: 1.2rem;
+  color: var(--Dark-grayish-blue);
+  font-weight: bold;
+}
+
+.cart-amount span {
+  padding: 0.5rem;
+  border-radius: 50%;
+  background: var(--Light-grayish-blue);
+}
+
+.cart-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+  margin: 2rem auto;
+  width: 90%;
+  outline: none;
+  border: none;
+  border-radius: 0.75rem;
+  background: var(--primary-Orange);
+  color: var(--White);
+  font-weight: bold;
+  font-size: 1.2rem;
+  cursor: pointer;
+}
+
+.cart-btn:hover {
+  background: var(--primary-Pale-orange);
+  color: var(--primary-Orange);
+}
+
+.cart-total {
+  color: var(--Very-dark-blue);
+}
+
+.cart-name {
+  font-size: 1rem;
+  color: var(--Dark-grayish-blue);
+}
+
+.delete-btn {
+  background: transparent;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: var(--Dark-grayish-blue);
+  font-size: 1.5rem;
+  transition: var(--transition);
+}
+
 .bar {
   display: block;
   margin-bottom: 1rem;
@@ -170,6 +299,23 @@ body {
   color: var(--Very-dark-blue);
 }
 
+/* @media screen and (min-width: 600) {
+  .cart {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 75%;
+    height: 100%;
+    background: var(--White);
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+  
+  }
+  .active {
+    left: 25%;
+  }
+} */
+
 @media screen and (min-width: 768px) {
   .menu {
     display: none;
@@ -188,6 +334,21 @@ body {
     align-items: center;
     gap: 2rem;
   }
+
+  /* .cart {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: var(--White);
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+ 
+  }
+  .active {
+    left: 50%;
+  } */
 }
 
 /* section-1 */
@@ -373,6 +534,21 @@ body {
     height: 100%;
     object-fit: cover;
   }
+
+  /* .cart {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: var(--White);
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+   
+  }
+  .active {
+    left: 50%;
+  } */
 }
 
 @media screen and (min-width: 992px) {
@@ -478,4 +654,35 @@ body {
     border: 2px solid var(--primary-Orange);
     opacity: 0.5;
   }
+
+  /* .cart {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: var(--White);
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+  
+  }
+  .active {
+    left: 50%;
+  } */
 }
+/* @media screen and (min-width: 1200px) {
+  .cart {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 50%;
+    height: 100%;
+    background: var(--White);
+    box-shadow: var(--box-shadow);
+    z-index: 5;
+    
+  }
+  .active {
+    left: 50%;
+  }
+} */

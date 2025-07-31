@@ -107,3 +107,52 @@ pluBtn.addEventListener("click", function () {
   quantityDecreaseIncrease++;
   updateSale();
 });
+
+const cartImage = document.querySelector(".cart-image");
+const cart = document.querySelector(".cart");
+const closeCart = document.querySelector(".close-cart");
+
+cartImage.addEventListener("click", () => cart.classList.add("active"));
+closeCart.addEventListener("click", () => cart.classList.remove("active"));
+
+const cartBtn = document.querySelector(".btn-cart");
+const cartBoxContainerContent = document.querySelector(".cart-content");
+cartBtn.addEventListener("click", (e) => {
+  const cartBox = e.target.closest(".main-page-container");
+  console.log(cartBox);
+  // if (!cartBox) return;
+  addToCart(cartBox);
+});
+const addToCart = (cartBox) => {
+  // Get the src of the active thumbnail image
+  const activeThumbnail = cartBox.querySelector(".thumbnail.active");
+  const cartBoxImgSrc = activeThumbnail ? activeThumbnail.src : "";
+  console.log(cartBoxImgSrc);
+  const cartBoxTitle = cartBox.querySelector(".sub-title").textContent;
+  console.log(cartBoxTitle);
+
+  const cartBoxPrice = cartBox.querySelector(".sale-amount").textContent;
+
+  const cartBoxContainer = document.createElement("div");
+  cartBoxContainer.classList.add("cart-box");
+  cartBoxContainer.innerHTML = `
+              <img
+                src="${cartBoxImgSrc}"
+                width="75"
+                height="75"
+                alt=""
+                class="image-cart"
+              />
+              <div class="cart-text">
+                <h1 class="cart-name">${cartBoxTitle}</h1>
+                <p class="cart-price">
+                  ${cartBoxPrice}
+                </p>
+              </div>
+              <button class="delete-btn">
+                <img src="./images/icon-delete.svg" alt="delete-btn" />
+              </button> 
+              
+  `;
+  cartBoxContainerContent.appendChild(cartBoxContainer);
+};

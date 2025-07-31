@@ -117,6 +117,7 @@ closeCart.addEventListener("click", () => cart.classList.remove("active"));
 
 const cartBtn = document.querySelector(".btn-cart");
 const cartBoxContainerContent = document.querySelector(".cart-content");
+
 cartBtn.addEventListener("click", (e) => {
   const cartBox = e.target.closest(".main-page-container");
   console.log(cartBox);
@@ -130,6 +131,15 @@ const addToCart = (cartBox) => {
   console.log(cartBoxImgSrc);
   const cartBoxTitle = cartBox.querySelector(".sub-title").textContent;
   console.log(cartBoxTitle);
+
+  const cartItem = cartBoxContainerContent.querySelectorAll(".image-cart");
+  console.log(cartItem);
+  for (const item of cartItem) {
+    if (item.src === cartBoxImgSrc) {
+      alert("This item is already in the cart");
+      return; // Exit the function if duplicate found
+    }
+  }
 
   const cartBoxPrice = cartBox.querySelector(".sale-amount").textContent;
 
@@ -150,9 +160,12 @@ const addToCart = (cartBox) => {
                 </p>
               </div>
               <button class="delete-btn">
-                <img src="./images/icon-delete.svg" alt="delete-btn" />
+                <img src="./images/icon-delete.svg" alt="delete-btn"  class="remove"/>
               </button> 
               
   `;
   cartBoxContainerContent.appendChild(cartBoxContainer);
+  cartBoxContainer.querySelector(".remove").addEventListener("click", () => {
+    cartBoxContainer.remove();
+  });
 };

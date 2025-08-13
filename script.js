@@ -119,23 +119,13 @@ const cartBtn = document.querySelector(".btn-cart");
 const cartBoxContainerContent = document.querySelector(".cart-content");
 
 const cartTotal = document.querySelector(".cart-total");
-let total = 0;
-const arrayP = [];
-const totalSum = function () {
-  total += +amountDisplay.textContent;
-  console.log(total);
-  cartTotal.textContent = `Total: $${total}.00`;
-};
-const cartItemClass = document.querySelectorAll(".cart-box");
+
 const totalBox = document.querySelector(".total-box");
 const dollaSign = document.querySelector(".dolla").textContent;
 cartBtn.addEventListener("click", (e) => {
   const cartBox = e.target.closest(".main-page-container");
   console.log(cartBox);
-  // if (cartItemClass.length === 0) {
-  //   alert("error");
-  //   return;
-  // }
+
   addToCart(cartBox);
 });
 const addToCart = (cartBox) => {
@@ -165,8 +155,6 @@ const addToCart = (cartBox) => {
   cartBoxContainer.className = "box_Class";
   console.log(cartBoxContainer);
   cartBoxContainer.classList.add("cart-box");
-
-  console.log(cartItemClass);
   cartBoxContainer.innerHTML = `
               <img
                 src="${cartBoxImgSrc}"
@@ -204,6 +192,15 @@ const addToCart = (cartBox) => {
   totalSum();
   letCount(1);
 };
+// cart item summation
+let total = 0;
+const arrayP = [];
+const totalSum = function () {
+  total += +amountDisplay.textContent;
+  console.log(total);
+  cartTotal.textContent = `Total: $${total}.00`;
+};
+
 // Item count
 let count = 0;
 function letCount(clickCount) {
@@ -217,3 +214,22 @@ function letCount(clickCount) {
     countNumber.textContent = "";
   }
 }
+
+const checkOutBtn = document.querySelector(".cart-btn");
+checkOutBtn.addEventListener("click", () => {
+  console.log("clicked");
+  const cartItemClass = document.querySelectorAll(".cart-box");
+  if (cartItemClass.length === 0) {
+    alert("Your cart is empty. Pls add items before buying");
+    return;
+  }
+  cartItemClass.forEach((el) => {
+    el.remove();
+  });
+  let total = 0;
+  count = 0;
+  letCount(0);
+  cartTotal.textContent = `Total: $${total}.00`;
+
+  alert("Thanks for the patronage");
+});

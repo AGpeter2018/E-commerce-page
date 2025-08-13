@@ -125,14 +125,17 @@ const totalSum = function () {
   total += +amountDisplay.textContent;
   console.log(total);
   cartTotal.textContent = `Total: $${total}.00`;
-  console.log(cartTotal);
 };
-
+const cartItemClass = document.querySelectorAll(".cart-box");
 const totalBox = document.querySelector(".total-box");
 const dollaSign = document.querySelector(".dolla").textContent;
 cartBtn.addEventListener("click", (e) => {
   const cartBox = e.target.closest(".main-page-container");
   console.log(cartBox);
+  // if (cartItemClass.length === 0) {
+  //   alert("error");
+  //   return;
+  // }
   addToCart(cartBox);
 });
 const addToCart = (cartBox) => {
@@ -160,9 +163,10 @@ const addToCart = (cartBox) => {
   const cartBoxContainer = document.createElement("div");
 
   cartBoxContainer.className = "box_Class";
-  const containerClass = document.querySelector(".box_Class");
   console.log(cartBoxContainer);
   cartBoxContainer.classList.add("cart-box");
+
+  console.log(cartItemClass);
   cartBoxContainer.innerHTML = `
               <img
                 src="${cartBoxImgSrc}"
@@ -181,18 +185,35 @@ const addToCart = (cartBox) => {
                 <img src="./images/icon-delete.svg" alt="delete-btn"  class="remove"/>
               </button> 
               
-  `;
+              `;
+
   cartBoxContainerContent.appendChild(cartBoxContainer);
+  // Deletion of an item
   cartBoxContainer.querySelector(".remove").addEventListener("click", () => {
     const itemPrice = parseInt(
       cartBoxContainer.querySelector(".cart-price").textContent
-    ); // price from that cart box
+    );
 
     total -= itemPrice;
     cartBoxContainer.remove();
 
     cartTotal.textContent = `Total: $${total}.00`;
+    letCount(-1);
   });
 
   totalSum();
+  letCount(1);
 };
+// Item count
+let count = 0;
+function letCount(clickCount) {
+  const countNumber = document.querySelector(".cart-number");
+  count += clickCount;
+  if (count > 0) {
+    countNumber.style.display = "block";
+    countNumber.textContent = count;
+  } else {
+    countNumber.style.display = "none";
+    countNumber.textContent = "";
+  }
+}

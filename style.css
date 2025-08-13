@@ -72,14 +72,29 @@ body {
   padding-left: 2rem;
 }
 
+.cart-header {
+  position: relative;
+  cursor: pointer;
+  outline: none;
+  border: none;
+  background: none;
+}
+
 .cart-image {
   height: 1.5rem;
 }
 
-.cart-header {
-  outline: none;
-  border: none;
-  background: none;
+.cart-header .cart-number {
+  position: absolute;
+  top: -0.3rem;
+  right: 2rem;
+  width: 0px;
+  height: 5px;
+  background: red;
+  border-radius: 50%;
+  display: none;
+  color: red;
+  font-size: 1rem;
 }
 
 .menu {
@@ -176,9 +191,7 @@ body {
 .close-cart:hover {
   color: var(--primary-Orange);
 }
-/* .cart-image {
-  height: 1.5rem;
-} */
+
 .cart-box {
   display: flex;
   justify-content: space-between;

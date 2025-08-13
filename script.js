@@ -118,10 +118,21 @@ closeCart.addEventListener("click", () => cart.classList.remove("active"));
 const cartBtn = document.querySelector(".btn-cart");
 const cartBoxContainerContent = document.querySelector(".cart-content");
 
+const cartTotal = document.querySelector(".cart-total");
+let total = 0;
+const arrayP = [];
+const totalSum = function () {
+  total += +amountDisplay.textContent;
+  console.log(total);
+  cartTotal.textContent = `Total: $${total}.00`;
+  console.log(cartTotal);
+};
+
+const totalBox = document.querySelector(".total-box");
+const dollaSign = document.querySelector(".dolla").textContent;
 cartBtn.addEventListener("click", (e) => {
   const cartBox = e.target.closest(".main-page-container");
   console.log(cartBox);
-  // if (!cartBox) return;
   addToCart(cartBox);
 });
 const addToCart = (cartBox) => {
@@ -141,9 +152,16 @@ const addToCart = (cartBox) => {
     }
   }
 
-  const cartBoxPrice = cartBox.querySelector(".sale-amount").textContent;
+  const cartBoxPrice = cartBox.querySelector(
+    ".sale-amount .right-thick"
+  ).textContent;
+  console.log(cartBoxPrice);
 
   const cartBoxContainer = document.createElement("div");
+
+  cartBoxContainer.className = "box_Class";
+  const containerClass = document.querySelector(".box_Class");
+  console.log(cartBoxContainer);
   cartBoxContainer.classList.add("cart-box");
   cartBoxContainer.innerHTML = `
               <img
@@ -155,9 +173,9 @@ const addToCart = (cartBox) => {
               />
               <div class="cart-text">
                 <h1 class="cart-name">${cartBoxTitle}</h1>
-                <p class="cart-price">
-                  ${cartBoxPrice}
-                </p>
+                <div class="dolla">${dollaSign}<span class="cart-price each-price" data-price="1">${cartBoxPrice}.00</span>
+                </div>
+              
               </div>
               <button class="delete-btn">
                 <img src="./images/icon-delete.svg" alt="delete-btn"  class="remove"/>
@@ -166,6 +184,15 @@ const addToCart = (cartBox) => {
   `;
   cartBoxContainerContent.appendChild(cartBoxContainer);
   cartBoxContainer.querySelector(".remove").addEventListener("click", () => {
+    const itemPrice = parseInt(
+      cartBoxContainer.querySelector(".cart-price").textContent
+    ); // price from that cart box
+
+    total -= itemPrice;
     cartBoxContainer.remove();
+
+    cartTotal.textContent = `Total: $${total}.00`;
   });
+
+  totalSum();
 };

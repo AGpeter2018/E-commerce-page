@@ -8,7 +8,10 @@ if (currentPage === "collection.html") {
   document.body.style.backgroundColor = "white";
 }
 if (currentPage === "women.html") {
-  document.body.style.backgroundColor = "white";
+  document.body.style.backgroundColor = "hsl(25, 100%, 94%)";
+}
+if (currentPage === "about.html") {
+  document.body.style.backgroundColor = "hsl(25, 100%, 94%)";
 }
 
 const menu = document.querySelector(".menu");
@@ -124,8 +127,6 @@ const cartImage = document.querySelector(".cart-image");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector(".close-cart");
 
-// cartImage.addEventListener("click", () => cart.classList.add("active"));
-// closeCart.addEventListener("click", () => cart.classList.remove("active"));
 const openCartIcon = function () {
   cart.style.transform = "translateX(8px)";
   cart.classList.remove("hidden");
@@ -140,6 +141,11 @@ const closeCartIcon = function () {
 
 cartImage.addEventListener("click", openCartIcon);
 closeCart.addEventListener("click", closeCartIcon);
+
+document.addEventListener("keydown", function (e) {
+  // console.log(e);
+  if (e.key === "Escape") closeCartIcon();
+});
 
 const cartBtn = document.querySelector(".btn-cart");
 const cartBoxContainerContent = document.querySelector(".cart-content");
@@ -259,3 +265,14 @@ checkOutBtn.addEventListener("click", () => {
 
   alert("Thanks for the patronage");
 });
+
+// document.querySelector(".header-lists").addEventListener("click", (e) => {
+//   e.preventDefault();
+//   const parent = e.target;
+//   const sibling = parent
+//     .contains("header-lists")
+//     .document.querySelector(".link");
+//   // console.log(parent);
+//   if (!parent) return;
+//   console.log(sibling);
+// });

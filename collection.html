@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <script defer src="./script.js"></script>
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <title>Document</title>
+  </head>
+  <body>
+    <header class="header">
+      <div class="header-container section-center">
+        <div class="menu-left">
+          <img src="./images/icon-menu.svg" class="menu" alt="" />
+
+          <img src="./images/logo.svg" class="logo" alt="Logo-image" />
+
+          <div class="header-lists">
+            <nav class="nav-links">
+              <li>
+                <a href="#">Collections</a>
+              </li>
+              <li>
+                <a href="#">Men</a>
+              </li>
+              <li>
+                <a href="#">women</a>
+              </li>
+              <li>
+                <a href="#">About</a>
+              </li>
+              <li>
+                <a href="#">Contact</a>
+              </li>
+            </nav>
+          </div>
+        </div>
+
+        <aside class="side-bar hidden">
+          <div class="bar-header">
+            <button class="close-btn">
+              <img src="./images/icon-close.svg" alt="close-btn" />
+            </button>
+            <ul class="bar-links bar-body">
+              <li>
+                <a class="bar alone-bar" href="#">Collections</a>
+              </li>
+              <li>
+                <a class="bar alone-bar" href="#">Men</a>
+              </li>
+              <li>
+                <a class="bar alone-bar" href="#">Women</a>
+              </li>
+              <li>
+                <a class="bar alone-bar" href="#">About</a>
+              </li>
+              <li>
+                <a class="bar alone-bar" href="#">Contact</a>
+              </li>
+            </ul>
+          </div>
+        </aside>
+
+        <div class="menu-right">
+          <span class="input">
+            <input type="text" id="input"></input>
+          </span>
+          <button class="cart-header">
+            <img
+              src="./images/icon-cart.svg"
+              class="cart-image"
+              alt="cart-image"
+              />
+              
+              <span class="cart-number"></span>
+          </button>
+
+          <img
+            src="./images/image-avatar.png"
+            class="image-avatar"
+            alt="image-avatar"
+          />
+        </div>
+        <div class="cart hidden">
+          <div class="title-header">
+            <h2 class="cart-title">Your cart</h2>
+            <button class="close-cart">
+              <img src="./images/icon-close.svg" alt="close-cart" />
+            </button>
+          </div>
+          <div class="cart-content">
+            <!-- <div class="cart-box"> -->
+              <!-- <img
+                src="./images/image-product-1-thumbnail.jpg"
+                width="75"
+                height="75"
+                alt=""
+                class="image-cart"
+              />
+              <div class="cart-text">
+                <h1 class="cart-name">Fall Limited Edition Sneakers</h1>
+                <p class="cart-price">
+                  $125.00 x <span class="cart-quantity">0</span>
+                  <span class="cart-total">$0.00</span>
+                </p>
+              </div>
+              <button class="delete-btn">
+                <img src="./images/icon-delete.svg" alt="delete-btn" />
+              </button> -->
+            </div>
+            <!-- <p class="empty-cart">Your cart is empty</p> -->
+             <div class="total-box">
+               <button class="cart-btn text-cart">Check out</button>
+                <span class="cart-total">Total: $0.00</span>
+             </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+        <!-- Collection -->
+     <section class="collection" id="collection">
+      <div class="collection-wrapper">
+        <div class="single-class">
+          <img class="product" src="./images/image-product-2.jpg" alt="">
+        </div>
+      </div>
+     </section>
+
+
+  </body>
+</html>

@@ -12,7 +12,7 @@
       href="./images/favicon-32x32.png"
     />
     <link rel="stylesheet" href="./style.css" />
-    <script defer src="./script.js"></script>
+    <script defer type="module" src="./script.js"></script>
 
     <title>Frontend Mentor | E-commerce product page</title>
    
@@ -72,6 +72,9 @@
         </aside>
 
         <div class="menu-right">
+          <span class="input">
+            <input type="text" id="input"></input>
+          </span>
           <button class="cart-header">
             <img
               src="./images/icon-cart.svg"
@@ -88,7 +91,7 @@
             alt="image-avatar"
           />
         </div>
-        <div class="cart">
+        <div class="cart hidden">
           <div class="title-header">
             <h2 class="cart-title">Your cart</h2>
             <button class="close-cart">
@@ -125,7 +128,7 @@
       </div>
     </header>
 
-    <section class="main-page section-1">
+    <section class="main-page section-1" id="Men">
       <div class="main-page-container">
         <div class="slider">
           <div class="product-preview product-slide-active product-1">
@@ -250,20 +253,11 @@
         </div>
       </div>
     </section>
-  
+
 
     <div class="overlay hidden"></div>
 
-    <!-- Collections Men Women About Contact Sneaker Company Fall Limited Edition
-    Sneakers These low-profile sneakers are your perfect casual wear companion.
-    Featuring a durable rubber outer sole, they’ll withstand everything the
-    weather can offer. $125.00 50% $250.00 0 Add to cart
-
-    <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="#">Your Name Here</a>.
-    </div> -->
+   
+    </div>
   </body>
 </html>

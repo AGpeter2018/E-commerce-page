@@ -112,8 +112,22 @@ const cartImage = document.querySelector(".cart-image");
 const cart = document.querySelector(".cart");
 const closeCart = document.querySelector(".close-cart");
 
-cartImage.addEventListener("click", () => cart.classList.add("active"));
-closeCart.addEventListener("click", () => cart.classList.remove("active"));
+// cartImage.addEventListener("click", () => cart.classList.add("active"));
+// closeCart.addEventListener("click", () => cart.classList.remove("active"));
+const openCartIcon = function () {
+  cart.style.transform = "translateX(8px)";
+  cart.classList.remove("hidden");
+  //   overlay.classList.remove("hidden");
+};
+
+const closeCartIcon = function () {
+  cart.style.transform = "";
+  cart.classList.add("hidden");
+  overlay.classList.add("hidden");
+};
+
+cartImage.addEventListener("click", openCartIcon);
+closeCart.addEventListener("click", closeCartIcon);
 
 const cartBtn = document.querySelector(".btn-cart");
 const cartBoxContainerContent = document.querySelector(".cart-content");

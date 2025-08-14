@@ -1,4 +1,16 @@
 "use strict";
+
+const currentPage = window.location.pathname.split("/").pop();
+if (currentPage === "index.html") {
+  document.body.style.backgroundColor = "white";
+}
+if (currentPage === "collection.html") {
+  document.body.style.backgroundColor = "white";
+}
+if (currentPage === "women.html") {
+  document.body.style.backgroundColor = "white";
+}
+
 const menu = document.querySelector(".menu");
 const closeBtn = document.querySelector(".close-btn");
 const sideBar = document.querySelector(".side-bar");

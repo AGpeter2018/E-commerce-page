@@ -3,8 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
-
     <link
       rel="icon"
       type="image/png"
@@ -13,9 +11,8 @@
     />
     <link rel="stylesheet" href="./style.css" />
     <script defer type="module" src="./script.js"></script>
+   <title>E-commerce product page | Contact</title>
 
-    <title>E-commerce product page | Men</title>
-   
   </head>
   <body>
     <header class="header">
@@ -128,135 +125,31 @@
       </div>
     </header>
 
-    <section class="main-page section-1" id="Men">
-      <div class="main-page-container">
-        <div class="slider">
-          <div class="product-preview product-slide-active product-1">
-            <img
-              src="./images/image-product-1.jpg"
-              class="product-1 img--1"
-              alt=""
-            />
-          </div>
-          <div class="product-preview product-2">
-            <img
-              src="./images/image-product-2.jpg"
-              class="product-1 img--2"
-              alt=""
-            />
-          </div>
-          <div class="product-preview product-3">
-            <img
-              src="./images/image-product-3.jpg"
-              class="product-1 img--3"
-              alt=""
-            />
-          </div>
-          <div class="product-preview product-4">
-            <img
-              src="./images/image-product-4.jpg"
-              class="product-1 img--4"
-              alt=""
-            />
-          </div>
-          <button class="slider__btn slider__btn--left">&larr;</button>
-          <button class="slider__btn slider__btn--right">&rarr;</button>
-        </div>
-
-        <div class="preview-slide">
-          <img
-            class="main-image product-1"
-            src="./images/image-product-1.jpg"
-            alt=""
-          />
-
-          <div class="thumbnail-image">
-            <img
-              class="thumbnail active"
-              src="./images/image-product-1-thumbnail.jpg"
-              width="75"
-              height="75"
-              alt=""
-            />
-            <img
-              class="thumbnail"
-              src="./images/image-product-2-thumbnail.jpg"
-              width="75"
-              height="75"
-              alt=""
-            />
-            <img
-              class="thumbnail"
-              src="./images/image-product-3-thumbnail.jpg"
-              width="75"
-              height="75"
-              alt=""
-            />
-            <img
-              class="thumbnail"
-              src="./images/image-product-4-thumbnail.jpg"
-              width="75"
-              height="75"
-              alt=""
-            />
-          </div>
-        </div>
-
-        <div class="product-info">
-          <h2 class="title">sneakers company</h2>
-
-          <h1 class="sub-title">
-            fall limited edition <br />
-            <span>sneakers</span>
-          </h1>
-
-          <p class="text">
-            These low-profile sneakers are your perfect casual wear companion.
-            Featuring a durable rubber outer sole, they’ll withstand everything
-            the weather can offer.
-          </p>
-          <div class="sale-amount">
-            <div class="amount-right">
-              <span class="dolla">$</span>
-              <span class="right-thick" data-id="1">125</span>
-              <span class="dolla">.00</span>
-              <p class="amount-percentage">50%</p>
-            </div>
-            <div class="amount-left">
-              <del><p class="left-thick">$250</p></del>
-            </div>
-          </div>
-
-          <div class="body-cart">
-            <div class="add-minus">
-              <button type="button" class="btn">
-                <img src="./images/icon-minus.svg" class="minus" alt="" />
-              </button>
-
-              <div class="number-cart">
-                <p class="quantity">0</p>
-              </div>
-
-              <button type="button" class="btn">
-                <img src="./images/icon-plus.svg" class="add" alt="" />
-              </button>
-            </div>
-
-            <div class="add-btn">
-              <button type="button" class="btn-bottom">
-                <img src="./images/icon-cart.svg" class="btn-cart" alt="" />
-
-                <p class="text-btn">Add to cart</p>
-              </button>
-            </div>
-          </div>
-        </div>
+    <section class="section-contact" id="6">
+      <div class="contact-title section-title">
+        <h1>Contact</h1>
+        <div class="underline underline_project "></div>
       </div>
+            <div class="contact-container section-center">
+              <img src="./images/contact.jpg" alt="contact-img" class="contact-img">
+              <div class="contact-info">
+              
+             
+                 
+                 <h2 class="  modal__header ">
+                  Get in touch
+                 </h2>
+                  <form class="modal__form">
+                    <label>First Name</label>
+                    <input type="text" placeholder="first name" />
+                    <label>Last Name</label>
+                    <input type="text" placeholder="last name" />
+                    <label>Email Address</label>
+                    <input type="email" placeholder="email" />
+                    <button class="btn">Submit &rarr;</button>
+                  </form>
+              </div>
+            </div>
     </section>
-    
-    <div class="overlay hidden"></div>
-
-   
-    </div>
   </body>
 </html>

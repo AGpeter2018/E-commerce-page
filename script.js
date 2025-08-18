@@ -106,12 +106,13 @@ const pluBtn = document.querySelector(".add");
 const quantity = document.querySelector(".quantity");
 const amountDisplay = document.querySelector(".right-thick");
 
-let quantityDecreaseIncrease = 0;
+let quantityDecreaseIncrease = 1;
 const unitPerSale = 125;
 
 const updateSale = function () {
   quantity.textContent = quantityDecreaseIncrease;
   amountDisplay.textContent = unitPerSale * quantityDecreaseIncrease;
+  totalSum();
 };
 
 minusBtn.addEventListener("click", function () {
@@ -208,30 +209,36 @@ const addToCart = (cartBox) => {
               `;
 
   cartBoxContainerContent.appendChild(cartBoxContainer);
-  // Deletion of an item
-  cartBoxContainer.querySelector(".remove").addEventListener("click", () => {
-    const itemPrice = parseInt(
-      cartBoxContainer.querySelector(".cart-price").textContent
-    );
-
-    total -= itemPrice;
-    cartBoxContainer.remove();
-
+  const itemPrice = parseInt(
+    cartBoxContainer.querySelector(".cart-price").textContent
+  );
+  // Adding of item cart
+  function sumCartPrice() {
+    total += itemPrice;
     cartTotal.textContent = `Total: $${total}.00`;
+  }
+  sumCartPrice();
+
+  // Deletion of an item
+  function cartRemove() {
+    total -= itemPrice;
+    cartTotal.textContent = `Total: $${total}.00`;
+  }
+  cartBoxContainer.querySelector(".remove").addEventListener("click", () => {
+    cartBoxContainer.remove();
+    cartRemove();
     letCount(-1);
+
+    if (document.querySelectorAll(".cart-box").length === 0) {
+      total = 0;
+      cartTotal.textContent = `Total: $${total}.00`;
+    }
   });
 
-  totalSum();
+  // totalSum();
   letCount(1);
 };
-// cart item summation
 let total = 0;
-const arrayP = [];
-const totalSum = function () {
-  total += +amountDisplay.textContent;
-  console.log(total);
-  cartTotal.textContent = `Total: $${total}.00`;
-};
 
 // Item count
 let count = 0;
@@ -258,21 +265,10 @@ checkOutBtn.addEventListener("click", () => {
   cartItemClass.forEach((el) => {
     el.remove();
   });
-  let total = 0;
+  total = 0;
+  cartTotal.textContent = `Total: $${total}.00`;
   count = 0;
   letCount(0);
-  cartTotal.textContent = `Total: $${total}.00`;
 
   alert("Thanks for the patronage");
 });
-
-// document.querySelector(".header-lists").addEventListener("click", (e) => {
-//   e.preventDefault();
-//   const parent = e.target;
-//   const sibling = parent
-//     .contains("header-lists")
-//     .document.querySelector(".link");
-//   // console.log(parent);
-//   if (!parent) return;
-//   console.log(sibling);
-// });

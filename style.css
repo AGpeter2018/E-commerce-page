@@ -181,7 +181,7 @@ body {
     position: fixed;
     top: 0;
     right: 0;
-    width: 25%;
+    width: 35%;
     height: 100%;
     background: var(--White);
     box-shadow: var(--box-shadow);
@@ -636,7 +636,7 @@ body {
   .active {
     left: 50%;
   } */
-}
+
 
 /* @media screen and (min-width: 830px) {
   .slider {

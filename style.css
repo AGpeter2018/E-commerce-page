@@ -117,6 +117,7 @@ body {
 
 .header-container {
   position: fixed;
+  top: 0;
   width: 100%;
   z-index: 4;
   display: flex;
@@ -424,15 +425,15 @@ body {
 
 .slider {
   position: relative;
-  height: 35rem;
+  height: 25rem;
   max-width: 50rem;
+  margin: 1rem;
 }
 .product-preview {
   position: absolute;
-  top: 5rem;
-  height: 45rem;
+  /* top: 5rem; */
+  height: 41rem;
   width: 40.4rem;
-  padding-bottom: 5rem;
 }
 .product-1 {
   height: 100%;
@@ -446,7 +447,7 @@ body {
 
 .slider__btn {
   position: absolute;
-  top: 50%;
+  top: 60%;
   z-index: 2;
 
   border: none;
@@ -461,12 +462,12 @@ body {
 }
 
 .slider__btn--left {
-  left: 7%;
+  left: 10%;
   transform: translate(-50%, -50%);
 }
 
 .slider__btn--right {
-  right: 7%;
+  right: 10%;
   transform: translate(50%, -50%);
 }
 
@@ -591,12 +592,28 @@ body {
   .slider {
     position: relative;
     width: 100%;
-    /* height: 45rem; */
+    height: 25rem;
+    padding-top: 2rem;
+  }
+
+  .slider__btn {
+    top: 50%;
+  }
+
+  .slider__btn--left {
+    left: 6%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 6%;
+    transform: translate(50%, -50%);
   }
   .product-preview {
     position: absolute;
     top: 0;
-    width: 50rem;
+    width: 55rem;
+    padding-top: 2rem;
   }
 
   .product-1 {
@@ -621,7 +638,42 @@ body {
   } */
 }
 
-@media screen and (min-width: 1200px) {
+/* @media screen and (min-width: 830px) {
+  .slider {
+    position: relative;
+    width: 300%;
+    height: 25rem;
+    padding-top: 2rem;
+  }
+
+  .slider__btn {
+    top: 50%;
+  }
+
+  .slider__btn--left {
+    left: 6%;
+    transform: translate(-50%, -50%);
+  }
+
+  .slider__btn--right {
+    right: 6%;
+    transform: translate(50%, -50%);
+  }
+  .product-preview {
+    position: absolute;
+    top: 0;
+    width: 55rem;
+    padding-top: 2rem;
+  }
+
+  .product-1 {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+} */
+
+@media screen and (min-width: 992px) {
   .main-page-container {
     display: grid;
     grid-template-columns: auto 1fr;
@@ -717,6 +769,7 @@ body {
 
   .thumbnail {
     outline: none;
+    cursor: pointer;
     border-radius: 8%;
   }
 
